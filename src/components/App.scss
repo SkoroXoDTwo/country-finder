@@ -1,0 +1,17 @@
+.app {
+    margin: 0 auto;
+    max-width: 1280px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  
+    &__container {
+      max-width: 1280px;
+      width: 100%;
+      margin: 0 auto;
+  
+    }
+  }
+  
