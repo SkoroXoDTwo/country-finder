@@ -3,4 +3,10 @@
   justify-content: space-between;
   padding-bottom: 50px;
   gap: 40px;
+
+  @media screen and (max-width: 800px) {
+    & {
+      flex-direction: column;
+    }
+  }
 }
