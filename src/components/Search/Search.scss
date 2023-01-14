@@ -3,6 +3,7 @@
   max-width: 480px;
   width: 100%;
   display: flex;
+  align-items: center;
   gap: 25px;
   box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.15);
   border-radius: 3px;
@@ -38,6 +39,45 @@
     &::placeholder {
       color: var(--search-placeholder-color);
       transition: color 0.2s;
+    }
+  }
+
+  &__clear-btn {
+    margin: 0;
+    padding: 0;
+    border: none;
+    background: none;
+    width: 20px;
+    height: 15px;
+    position: relative;
+    z-index: 3;
+    transition: opacity 0.2s;
+
+    &:hover {
+      cursor: pointer;
+      opacity: 0.6;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 6px;
+      left: 0px;
+      width: 100%;
+      border-bottom: 2px solid var(--search-placeholder-color);
+      transition: transform 0.2s, border-bottom 0.2s;
+      transform: translateX(0px) rotate(45deg);
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 13px;
+      left: 0px;
+      width: 100%;
+      border-bottom: 2px solid var(--search-placeholder-color);
+      transition: transform 0.2s, border-bottom 0.2s;
+      transform: translateY(-7px) rotate(-45deg);
     }
   }
 }

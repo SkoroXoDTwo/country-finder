@@ -25,6 +25,12 @@
     &:hover {
       cursor: pointer;
     }
+
+    @media screen and (max-width: 550px) {
+      & {
+        padding: 16px 12px 16px 20px;
+      }
+    }
   }
 
   &__btn-text {
@@ -38,6 +44,7 @@
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
+    text-transform: capitalize;
   }
 
   &__btn-icon {
@@ -49,13 +56,6 @@
     &_opened {
       transform: rotate(-180deg);
     }
-  }
-
-  &__container-list {
-    max-height: 0;
-    overflow: hidden;
-
-    width: 100%;
   }
 
   &__list {
@@ -85,7 +85,23 @@
     }
   }
 
+  &__item-circle {
+    width: 5px;
+    height: 5px;
+    background: var(--text-color);
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: -10px;
+    transform: translateY(-50%);
+    transition: background 0.2s;
+  }
+
   &__list-item {
+    position: relative;
+  }
+
+  &__item-btn {
     margin: 0;
     padding: 0;
     border: none;
@@ -101,6 +117,7 @@
     overflow: hidden;
     width: 100%;
     text-align: left;
+    position: relative;
 
     &:hover {
       cursor: pointer;

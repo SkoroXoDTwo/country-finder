@@ -1,3 +1,8 @@
 export const regionsConfig = [
-  "africa", "america", "asia", "europe", "oceania"
-]
+  "all",
+  "africa",
+  "america",
+  "asia",
+  "europe",
+  "oceania",
+];

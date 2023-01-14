@@ -1,28 +1,46 @@
 import "./Filters.scss";
+import { useSelector, useDispatch } from "react-redux";
+import { changeFilter } from "../../store/filters/filtersActions";
 import { regionsConfig } from "../../mock/regionsConfig";
 import { useState } from "react";
 
 function Filters() {
-  const [isOpen, setIsOpen] = useState(true);
+  const dispatch = useDispatch();
+  const filterValue = useSelector((state) => state.filter);
+  const [isOpen, setIsOpen] = useState(false);
 
-  const handleOpenList = () => {
+  const toggleOpenedList = () => {
     setIsOpen(!isOpen);
-  }
+  };
+
+  const activateFilter = (e) => {
+    dispatch(changeFilter(e.target.textContent));
+    toggleOpenedList(false);
+  };
 
   return (
     <div className="filters">
-      <button className="filters__btn" onClick={handleOpenList}>
-        <p className="filters__btn-text">Filter by Region</p>
-        <span className={`filters__btn-icon ${isOpen ? "filters__btn-icon_opened" : ''}`}></span>
+      <button className="filters__btn" onClick={toggleOpenedList}>
+        <p className="filters__btn-text">
+          {filterValue === "all" ? "Filter by Region" : filterValue}
+        </p>
+        <span
+          className={`filters__btn-icon ${
+            isOpen ? "filters__btn-icon_opened" : ""
+          }`}
+        ></span>
       </button>
 
-      <ul className={`filters__list ${isOpen ? "filters__list_opened" : ''}`}>
-          {regionsConfig.map((region, index) => (
-            <li key={index}>
-              <button className="filters__list-item">{region}</button>
-            </li>
-          ))}
-        </ul>
+      <ul className={`filters__list ${isOpen ? "filters__list_opened" : ""}`}>
+        {regionsConfig.map((region, index) => (
+          <li className="filters__list-item" key={index}>
+            {filterValue === region && <div className="filters__item-circle" />}
+            <button className="filters__item-btn" onClick={activateFilter}>
+              {region}
+            </button>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }
