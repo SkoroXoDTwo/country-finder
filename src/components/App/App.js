@@ -1,7 +1,12 @@
 import "./App.scss";
-import Header from "../Header/Header";
 import { setTheme } from "../../utils/setTheme";
 import { useSelector } from "react-redux";
+// компоненты
+import Header from "../Header/Header";
+
+// страницы
+import Home from "../../pages/Home";
+
 
 function App() {
   const theme = useSelector(state => state.theme);
@@ -11,7 +16,7 @@ function App() {
     <div className="app">
       <div className="app__container">
         <Header />
-        <div className="test"></div>
+        <Home />
       </div>
     </div>
   );

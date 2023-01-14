@@ -13,15 +13,19 @@ body {
 }
 
 body[data-theme="light"] {
-  --background-header-color: #fff;
+  --background-block-color: #fff;
   --background-body-color: #fff;
   --text-color: #121214;
   --theme-icon: url(./images/light-theme-icon.svg);
+  --search-icon: url(./images/light-search-icon.svg);
+  --search-placeholder-color: #00000080;
 }
 
 body[data-theme="dark"] {
-  --background-header-color: #2b3743;
+  --background-block-color: #2b3743;
   --background-body-color: #202d36;
   --text-color: #ffffff;
   --theme-icon: url(./images/dark-theme-icon.svg);
+  --search-icon: url(./images/dark-search-icon.svg);
+  --search-placeholder-color: #ffffffbf;
 }
