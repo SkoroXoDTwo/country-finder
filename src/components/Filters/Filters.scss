@@ -34,6 +34,65 @@
     width: 24px;
     height: 24px;
     background: var(--arrow-icon);
-    transition: background 0.2s;
+    transition: background 0.2s, transform 0.2s;
+
+    &_opened {
+      transform: rotate(180deg);
+    }
+  }
+
+  &__container-list {
+    max-height: 0;
+    overflow: hidden;
+
+    width: 100%;
+
+
+
+  }
+
+  &__list {
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    transform: translateY(100%);
+    z-index: 2;
+    margin: 0;
+    padding: 18px 25px;
+    list-style: none;
+    width: 100%;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.15);
+    border-radius: 3px;
+    background: var(--background-block-color);
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    opacity: 0;
+    visibility: hidden;
+    transition: background 0.2s, opacity 0.2s, visibility 0.2s;
+
+    &_opened {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  &__list-item {
+    margin: 0;
+    padding: 0;
+    border: none;
+    background: none;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    text-transform: capitalize;
+    color: var(--text-color);
+    transition: color 0.2s, opacity 0.2s;
+
+    &:hover {
+      cursor: pointer;
+      opacity: 0.8;
+    }
   }
 }
