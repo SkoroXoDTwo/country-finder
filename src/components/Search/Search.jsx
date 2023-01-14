@@ -16,14 +16,14 @@ function Search() {
 
   return (
     <div className="search">
-      <span className="search__icon" />
+      <div className="search__icon" />
       <input
         value={searchValue}
         className="search__input"
         placeholder="Search for a country..."
         onChange={changeInput}
       />
-      {searchValue !== "" && <button className="search__clear-btn" onClick={clearSearchValue}/>}
+      {searchValue !== "" && <button className="search__clear-btn" onClick={clearSearchValue} />}
     </div>
   );
 }

@@ -25,9 +25,8 @@ function Filters() {
           {filterValue === "all" ? "Filter by Region" : filterValue}
         </p>
         <span
-          className={`filters__btn-icon ${
-            isOpen ? "filters__btn-icon_opened" : ""
-          }`}
+          className={`filters__btn-icon ${isOpen ? "filters__btn-icon_opened" : ""
+            }`}
         ></span>
       </button>
 
