@@ -19,6 +19,7 @@ body[data-theme="light"] {
   --theme-icon: url(./images/light-theme-icon.svg);
   --search-icon: url(./images/light-search-icon.svg);
   --search-placeholder-color: #00000080;
+  --arrow-icon: url(./images/light-arrow-icon.svg)
 }
 
 body[data-theme="dark"] {
@@ -28,4 +29,5 @@ body[data-theme="dark"] {
   --theme-icon: url(./images/dark-theme-icon.svg);
   --search-icon: url(./images/dark-search-icon.svg);
   --search-placeholder-color: #ffffffbf;
+  --arrow-icon: url(./images/dark-arrow-icon.svg)
 }
