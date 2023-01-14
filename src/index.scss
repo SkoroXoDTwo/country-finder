@@ -9,6 +9,7 @@ body {
   text-rendering: optimizeLegibility;
   font-family: "Inter", sans-serif;
   background: var(--background-body-color);
+  transition: background 0.2s;
 }
 
 body[data-theme="light"] {
