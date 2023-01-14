@@ -1,9 +1,13 @@
-import Main from "../components/Main/Main"
-import Navbar from "../components/Navbar/Navbar";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+
 import { loadCountries } from "../store/countries/countriesActions";
 import { selectCountriesInfo } from "../store/countries/countriesSelectors";
-import { useEffect } from "react";
+
+import Main from "../components/Main/Main"
+import Navbar from "../components/Navbar/Navbar";
+import CountriesList from "../components/CountriesList/CountriesList";
+
 function Home() {
   const dispatch = useDispatch();
   const { qty } = useSelector(selectCountriesInfo);
@@ -11,11 +15,12 @@ function Home() {
   useEffect(() => {
     if (!qty)
       dispatch(loadCountries())
-  }, [qty])
+  }, [qty, dispatch])
 
   return (
     <Main>
       <Navbar />
+      <CountriesList />
     </Main>
   );
 }

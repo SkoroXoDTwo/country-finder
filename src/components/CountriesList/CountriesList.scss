@@ -1,0 +1,11 @@
+.countries-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 265px);
+  gap: 70px;
+  justify-content: center;
+
+}

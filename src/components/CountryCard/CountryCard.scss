@@ -1,0 +1,57 @@
+.country {
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.15);
+  border-radius: 5px;
+  background: (--background-block-color);
+
+  &__img {
+    width: 265px;
+    height: 159px;
+    object-fit: cover;
+    border-radius: 5px 5px 0 0;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    padding: 30px 25px 45px;
+  }
+
+  &__title {
+    margin: 0 0 20px;
+    padding: 0;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 21px;
+    color: var(--text-color);
+  }
+
+  &__statistics {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  &__text {
+    margin: 0;
+    padding: 0;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    color: var(--text-card-color);
+  }
+
+  &__text-bold {
+    margin: 0;
+    padding: 0;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    text-transform: capitalize;
+    color: var(--text-color);
+  }
+}

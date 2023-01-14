@@ -16,18 +16,20 @@ body[data-theme="light"] {
   --background-block-color: #fff;
   --background-body-color: #fff;
   --text-color: #121214;
+  --text-card-color: #00000080;
   --theme-icon: url(./images/light-theme-icon.svg);
   --search-icon: url(./images/light-search-icon.svg);
   --search-placeholder-color: #00000080;
-  --arrow-icon: url(./images/light-arrow-icon.svg)
+  --arrow-icon: url(./images/light-arrow-icon.svg);
 }
 
 body[data-theme="dark"] {
   --background-block-color: #2b3743;
   --background-body-color: #202d36;
   --text-color: #ffffff;
+  --text-card-color: #ffffff80;
   --theme-icon: url(./images/dark-theme-icon.svg);
   --search-icon: url(./images/dark-search-icon.svg);
   --search-placeholder-color: #ffffffbf;
-  --arrow-icon: url(./images/dark-arrow-icon.svg)
+  --arrow-icon: url(./images/dark-arrow-icon.svg);
 }
