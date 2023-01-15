@@ -1,6 +1,8 @@
 import "./CountryCard.scss"
+import { putCommasInNumber } from "../../utils/putCommasInNumber";
 
 function CountryCard({ name, population, region, capital, flagUrl }) {
+
   return (
     <li>
       <article className="country">
@@ -11,7 +13,7 @@ function CountryCard({ name, population, region, capital, flagUrl }) {
             <li>
               <p className="country__text">
                 <span className="country__text-bold">population: </span>
-                {population}
+                {putCommasInNumber(population)}
               </p>
             </li>
             <li>

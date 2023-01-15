@@ -8,15 +8,10 @@ import Header from "../Header/Header";
 
 // страницы
 import Home from "../../pages/Home";
-import { useEffect } from "react";
 
 function App() {
   const theme = useSelector((state) => state.theme);
   setTheme(theme);
-
-  useEffect(() => {
-
-  }, [])
 
   return (
     <div className="app">
