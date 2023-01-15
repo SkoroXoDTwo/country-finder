@@ -16,6 +16,12 @@ class Api {
       `${this._baseUrl}/all?fields=name,capital,flags,population,region`
     ).then(this._checkResponse);
   }
+
+  getDetails(name) {
+    return fetch(
+      `${this._baseUrl}/name/${name}`
+    ).then(this._checkResponse);
+  }
 }
 
 const api = new Api({

@@ -8,6 +8,7 @@ import Header from "../Header/Header";
 
 // страницы
 import Home from "../../pages/Home";
+import Country from "../../pages/Country";
 
 function App() {
   const theme = useSelector((state) => state.theme);
@@ -19,6 +20,7 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/country/:name" element={<Country />} />
         </Routes>
       </div>
     </div>

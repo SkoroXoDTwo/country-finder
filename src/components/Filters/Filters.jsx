@@ -2,16 +2,38 @@ import "./Filters.scss";
 import { useSelector, useDispatch } from "react-redux";
 import { changeFilter } from "../../store/filters/filtersActions";
 import { regionsConfig } from "../../mock/regionsConfig";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 function Filters() {
   const dispatch = useDispatch();
   const filterValue = useSelector((state) => state.filter);
+
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleOpenedList = () => {
     setIsOpen(!isOpen);
   };
+
+  const isHoverBtnFilters = (e) => {
+    return !(e.target.classList.contains('filters__btn') ||
+      e.target.classList.contains('filters__btn-text') ||
+      e.target.classList.contains('filters__btn-icon'))
+  }
+
+  const closeFiltersList = (e) => {
+    if (isHoverBtnFilters(e)) {
+      setIsOpen(false);
+    }
+  }
+
+  useEffect(() => {
+    if (isOpen) {
+      document.body.addEventListener(('click'), closeFiltersList)
+    }
+    else {
+      document.body.removeEventListener(('click'), closeFiltersList)
+    }
+  }, [isOpen])
 
   const activateFilter = (e) => {
     dispatch(changeFilter(e.target.textContent));

@@ -1,12 +1,9 @@
 import "./Navbar.scss"
-import Search from "../Search/Search";
-import Filters from "../Filters/Filters";
 
-function Navbar() {
+function Navbar({ children }) {
   return (
     <section className="navbar">
-      <Search />
-      <Filters />
+      {children}
     </section>
   )
 }

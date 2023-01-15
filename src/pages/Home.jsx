@@ -6,7 +6,10 @@ import { selectCountriesInfo } from "../store/countries/countriesSelectors";
 
 import Main from "../components/Main/Main"
 import Navbar from "../components/Navbar/Navbar";
+import Search from "../components/Search/Search";
+import Filters from "../components/Filters/Filters";
 import CountriesList from "../components/CountriesList/CountriesList";
+
 
 function Home() {
   const dispatch = useDispatch();
@@ -19,7 +22,11 @@ function Home() {
 
   return (
     <Main>
-      <Navbar />
+      <Navbar>
+        <Search />
+        <Filters />
+      </Navbar>
+
       <CountriesList />
     </Main>
   );
