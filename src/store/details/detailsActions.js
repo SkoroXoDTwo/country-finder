@@ -16,12 +16,13 @@ const setError = (err) => ({
 });
 
 export const loadDetails = (name) => (dispath) => {
+  console.log('load')
   dispath(setLoading());
 
   api
     .getDetails(name)
     .then((data) => {
-      dispath(addDetails(data));
+      dispath(addDetails(data[0]));
     })
     .catch((err) => {
       dispath(setError(err));

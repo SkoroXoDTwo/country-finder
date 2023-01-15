@@ -2,7 +2,7 @@ import "./Filters.scss";
 import { useSelector, useDispatch } from "react-redux";
 import { changeFilter } from "../../store/filters/filtersActions";
 import { regionsConfig } from "../../mock/regionsConfig";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 
 function Filters() {
   const dispatch = useDispatch();
@@ -14,19 +14,23 @@ function Filters() {
     setIsOpen(!isOpen);
   };
 
-  const isHoverBtnFilters = (e) => {
-    return !(e.target.classList.contains('filters__btn') ||
-      e.target.classList.contains('filters__btn-text') ||
-      e.target.classList.contains('filters__btn-icon'))
-  }
 
-  const closeFiltersList = (e) => {
-    if (isHoverBtnFilters(e)) {
-      setIsOpen(false);
-    }
-  }
+
+
 
   useEffect(() => {
+    const isHoverBtnFilters = (e) => {
+      return !(e.target.classList.contains('filters__btn') ||
+        e.target.classList.contains('filters__btn-text') ||
+        e.target.classList.contains('filters__btn-icon'))
+    }
+
+    const closeFiltersList = (e) => {
+      if (isHoverBtnFilters(e)) {
+        setIsOpen(false);
+      }
+    }
+
     if (isOpen) {
       document.body.addEventListener(('click'), closeFiltersList)
     }
