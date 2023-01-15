@@ -4,6 +4,11 @@
   box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.15);
   border-radius: 5px;
   background: (--background-block-color);
+  transition: background 0.2s;
+
+  &:hover {
+    cursor: pointer;
+  }
 
   &__img {
     width: 265px;
@@ -25,6 +30,7 @@
     font-size: 18px;
     line-height: 21px;
     color: var(--text-color);
+    transition: color 0.2s;
   }
 
   &__statistics {
@@ -43,6 +49,7 @@
     font-size: 14px;
     line-height: 16px;
     color: var(--text-card-color);
+    transition: color 0.2s;
   }
 
   &__text-bold {
@@ -53,5 +60,6 @@
     line-height: 16px;
     text-transform: capitalize;
     color: var(--text-color);
+    transition: color 0.2s;
   }
 }

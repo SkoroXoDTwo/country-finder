@@ -1,13 +1,15 @@
 import "./CountriesList.scss"
 import { useSelector } from "react-redux";
 
-import { selectAllCountries } from "../../store/countries/countriesSelectors";
+import { selectVisibleCountries } from "../../store/countries/countriesSelectors";
 
 import CountryCard from "../CountryCard/CountryCard";
 
 
 function CountriesList() {
-  const countries = useSelector(selectAllCountries);
+  const search = useSelector(state => state.search)
+  const region = useSelector(state => state.filter)
+  const countries = useSelector(state => selectVisibleCountries(state, { search, region }));
 
   return (
     <ul className="countries-list">
