@@ -4,6 +4,18 @@
   gap: 150px;
   align-items: center;
 
+  @media screen and (max-width: 1280px) {
+    & {
+      gap: 60px;
+    }
+  }
+
+  @media screen and (max-width: 1024px) {
+    & {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+
   &__img {
     width: 100%;
   }
@@ -47,5 +59,11 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     row-gap: 15px;
+
+    @media screen and (max-width: 550px) {
+      & {
+        grid-template-columns: repeat(1, 1fr);
+      }
+    }
   }
 }

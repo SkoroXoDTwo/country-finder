@@ -1,14 +1,14 @@
 import "./GoBackBtn.scss"
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function GoBackBtn() {
+  const navigate = useNavigate();
+
   return (
-      <Link to={`/`}>
-        <button className="go-back-btn">
-          <div className="go-back-btn__icon"></div>
-          <p className="go-back-btn__text">back</p>
-        </button>
-      </Link>
+    <button className="go-back-btn" onClick={() => navigate(-1)}>
+      <div className="go-back-btn__icon"></div>
+      <p className="go-back-btn__text">back</p>
+    </button>
   );
 }
 
