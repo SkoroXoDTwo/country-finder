@@ -19,7 +19,7 @@ class Api {
 
   getDetails(name) {
     return fetch(
-      `${this._baseUrl}/name/${name}`
+      `${this._baseUrl}/name/${name}?currencies=name`
     ).then(this._checkResponse);
   }
 }

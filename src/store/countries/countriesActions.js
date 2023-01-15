@@ -1,5 +1,6 @@
 import { ADD_COUNTRIES, SET_LOADING, SET_ERROR } from "./countriesConst";
 import api from "../../utils/Api";
+import { putCommasInNumber } from "../../utils/putCommasInNumber";
 
 const addCountries = (data) => ({
   type: ADD_COUNTRIES,
@@ -21,6 +22,10 @@ export const loadCountries = () => (dispath) => {
   api
     .getCountries()
     .then((data) => {
+      data.forEach((country) => {
+        country.populationNumber = country.population;
+        country.population = putCommasInNumber(country.population);
+      });
       dispath(addCountries(data));
     })
     .catch((err) => {

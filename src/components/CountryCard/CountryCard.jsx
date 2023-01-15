@@ -1,8 +1,9 @@
 import "./CountryCard.scss"
 import { Link } from "react-router-dom";
 import { putCommasInNumber } from "../../utils/putCommasInNumber";
+import { countryCardConfig } from "../../mock/countryCardConfig";
 
-function CountryCard({ name, population, region, capital, flagUrl }) {
+function CountryCard({ name, flagUrl, country }) {
 
   return (
     <Link to={`/country/${name}`}>
@@ -12,24 +13,14 @@ function CountryCard({ name, population, region, capital, flagUrl }) {
           <div className="country__container">
             <h2 className="country__title">{name}</h2>
             <ul className="country__statistics">
-              <li>
-                <p className="country__text">
-                  <span className="country__text-bold">population: </span>
-                  {putCommasInNumber(population)}
-                </p>
-              </li>
-              <li>
-                <p className="country__text">
-                  <span className="country__text-bold">Region: </span>
-                  {region}
-                </p>
-              </li>
-              <li>
-                <p className="country__text">
-                  <span className="country__text-bold">Capital: </span>
-                  {capital}
-                </p>
-              </li>
+              {countryCardConfig.map((setup) => (
+                <li key={setup}>
+                  <p className="country__text">
+                    <span className="country__text-bold">{setup}: </span>
+                    {country[setup]}
+                  </p>
+                </li>
+              ))}
             </ul>
           </div>
         </article>

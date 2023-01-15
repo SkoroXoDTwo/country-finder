@@ -14,10 +14,6 @@ function Filters() {
     setIsOpen(!isOpen);
   };
 
-
-
-
-
   useEffect(() => {
     const isHoverBtnFilters = (e) => {
       return !(e.target.classList.contains('filters__btn') ||
