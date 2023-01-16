@@ -5,5 +5,6 @@ export const detailsConfig = [
   "subregion",
   "capital",
   "currencies",
-  "languages"
+  "languages",
+  "topLevelDomain"
 ];

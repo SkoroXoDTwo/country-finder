@@ -1,8 +1,15 @@
-import { ADD_DETAILS, SET_LOADING, SET_ERROR } from "./detailsConst";
+import {
+  ADD_DETAILS,
+  SET_LOADING,
+  SET_ERROR,
+  ADD_NEIGBORS,
+} from "./detailsConst";
+
 const initialState = {
   status: "idle",
   error: null,
   currentCountry: null,
+  neigbors: [],
 };
 
 export const detailsReducer = (state = initialState, { type, payload }) => {
@@ -27,6 +34,12 @@ export const detailsReducer = (state = initialState, { type, payload }) => {
         status: "rejected",
         error: payload,
       };
+
+    case ADD_NEIGBORS:
+      return {
+        ...state,
+        neigbors: payload
+      }
 
     default:
       return state;

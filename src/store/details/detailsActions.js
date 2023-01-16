@@ -1,4 +1,10 @@
-import { ADD_DETAILS, SET_LOADING, SET_ERROR } from "./detailsConst";
+import {
+  ADD_DETAILS,
+  SET_LOADING,
+  SET_ERROR,
+  ADD_NEIGBORS,
+} from "./detailsConst";
+
 import api from "../../utils/Api";
 import { putCommasInNumber } from "../../utils/putCommasInNumber";
 
@@ -14,6 +20,11 @@ const setLoading = () => ({
 const setError = (err) => ({
   type: SET_ERROR,
   payload: err,
+});
+
+const addNeigbors = (countries) => ({
+  type: ADD_NEIGBORS,
+  payload: countries,
 });
 
 export const loadDetails = (name) => (dispath) => {
@@ -32,10 +43,20 @@ export const loadDetails = (name) => (dispath) => {
         ""
       );
 
-      console.log(data[0].languages);
       dispath(addDetails(data[0]));
     })
     .catch((err) => {
       dispath(setError(err));
+    });
+};
+
+export const loadNeigbors = (borders) => (dispath) => {
+  api
+    .getNeigbors(borders)
+    .then((data) => {
+      dispath(addNeigbors(data.map(item => item.name)));
+    })
+    .catch((err) => {
+      console.log(err);
     });
 };

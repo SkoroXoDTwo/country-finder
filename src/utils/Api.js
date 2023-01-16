@@ -22,6 +22,12 @@ class Api {
       `${this._baseUrl}/name/${name}?currencies=name`
     ).then(this._checkResponse);
   }
+
+  getNeigbors(borders) {
+    return fetch(
+      `${this._baseUrl}alpha?codes=${borders.join(',')}`
+    ).then(this._checkResponse);
+  }
 }
 
 const api = new Api({

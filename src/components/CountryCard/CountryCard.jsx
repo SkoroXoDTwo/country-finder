@@ -17,7 +17,7 @@ function CountryCard({ name, flagUrl, country }) {
                 <li key={setup}>
                   <p className="country__text">
                     <span className="country__text-bold">{setup}: </span>
-                    {country[setup]}
+                    {country[setup] ? country[setup] : 'none'}
                   </p>
                 </li>
               ))}
