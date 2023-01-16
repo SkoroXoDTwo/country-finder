@@ -22,6 +22,7 @@ body[data-theme="light"] {
   --search-placeholder-color: #00000080;
   --arrow-icon: url(./images/light-arrow-icon.svg);
   --arrow-back-icon: url(./images/light-arrow-back-icon.svg);
+  --error-message-icon: url(./images/light-error-message-icon.svg)
 }
 
 body[data-theme="dark"] {
@@ -34,4 +35,5 @@ body[data-theme="dark"] {
   --search-placeholder-color: #ffffffbf;
   --arrow-icon: url(./images/dark-arrow-icon.svg);
   --arrow-back-icon: url(./images/dark-arrow-back-icon.svg);
+  --error-message-icon: url(./images/dark-error-message-icon.svg)
 }

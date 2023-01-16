@@ -9,7 +9,7 @@ const initialState = {
   status: "idle",
   error: null,
   currentCountry: null,
-  neigbors: [],
+  neigbors: null,
 };
 
 export const detailsReducer = (state = initialState, { type, payload }) => {

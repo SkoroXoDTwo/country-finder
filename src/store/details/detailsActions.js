@@ -28,7 +28,6 @@ const addNeigbors = (countries) => ({
 });
 
 export const loadDetails = (name) => (dispath) => {
-  console.log("load");
   dispath(setLoading());
 
   api
@@ -37,11 +36,7 @@ export const loadDetails = (name) => (dispath) => {
       data[0].currencies = data[0].currencies[0].name;
       data[0].populationNumber = data[0].population;
       data[0].population = putCommasInNumber(data[0].population);
-      data[0].languages = data[0].languages.reduce(
-        (str, current) =>
-          str === "" ? current.name : str + ", " + current.name,
-        ""
-      );
+      data[0].languages = data[0].languages.map((lang) => lang.name).join(", ");
 
       dispath(addDetails(data[0]));
     })
@@ -54,7 +49,7 @@ export const loadNeigbors = (borders) => (dispath) => {
   api
     .getNeigbors(borders)
     .then((data) => {
-      dispath(addNeigbors(data.map(item => item.name)));
+      dispath(addNeigbors(data.map((item) => item.name)));
     })
     .catch((err) => {
       console.log(err);

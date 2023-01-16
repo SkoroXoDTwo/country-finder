@@ -1,11 +1,15 @@
 import "./Details.scss";
+
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
+
 import { loadDetails, loadNeigbors } from "../../store/details/detailsActions";
-import { detailsConfig } from "../../mock/detailsConfig";
 import { putSpaceInString } from "../../utils/putSpaceInString";
+
+import { detailsConfig } from "../../mock/detailsConfig";
+
 import LoaderSection from "../LoaderSection/LoaderSection";
 
 function Details() {

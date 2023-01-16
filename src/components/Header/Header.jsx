@@ -1,6 +1,7 @@
 import "./Header.scss";
 import { useDispatch, useSelector } from "react-redux";
 import { changeTheme } from "../../store/theme/themeActions";
+import { Link } from "react-router-dom";
 
 function Header() {
   const dispatch = useDispatch();
@@ -12,7 +13,9 @@ function Header() {
 
   return (
     <header className="header">
-      <h1 className="header__logo">Where in the world?</h1>
+      <Link to={"/"}>
+        <h1 className="header__logo">Where in the world?</h1>
+      </Link>
 
       <button className="header__theme-btn" onClick={handleChangeTheme}>
         <span className="header__theme-icon"></span>
