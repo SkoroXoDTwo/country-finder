@@ -1,6 +1,5 @@
 import "./CountryCard.scss"
 import { Link } from "react-router-dom";
-import { putCommasInNumber } from "../../utils/putCommasInNumber";
 import { countryCardConfig } from "../../mock/countryCardConfig";
 
 function CountryCard({ name, flagUrl, country }) {
