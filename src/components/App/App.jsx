@@ -1,7 +1,5 @@
 import "./App.scss";
 import { Route, Routes } from "react-router-dom";
-import { setTheme } from "../../utils/setTheme";
-import { useSelector } from "react-redux";
 
 // компоненты
 import Header from "../Header/Header";
@@ -9,11 +7,9 @@ import Header from "../Header/Header";
 // страницы
 import Home from "../../pages/Home";
 import Country from "../../pages/Country";
+import NotFound from "../../pages/NotFound";
 
 function App() {
-  const theme = useSelector((state) => state.theme);
-  setTheme(theme);
-
   return (
     <div className="app">
       <div className="app__container">
@@ -21,6 +17,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/country/:name" element={<Country />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </div>
     </div>

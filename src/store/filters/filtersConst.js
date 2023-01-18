@@ -1,1 +1,1 @@
-export const CHANGE_FILTERS = "CHANGE_FILTERS";
+export const CHANGE_FILTERS = "@@filters/CHANGE_FILTERS";

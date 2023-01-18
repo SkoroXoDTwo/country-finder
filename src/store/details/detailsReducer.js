@@ -13,6 +13,7 @@ const initialState = {
 };
 
 export const detailsReducer = (state = initialState, { type, payload }) => {
+
   switch (type) {
     case ADD_DETAILS:
       return {

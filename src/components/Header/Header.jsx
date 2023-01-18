@@ -1,11 +1,18 @@
 import "./Header.scss";
 import { useDispatch, useSelector } from "react-redux";
-import { changeTheme } from "../../store/theme/themeActions";
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
+
+import { changeTheme } from "../../store/theme/themeActions";
+import { setTheme } from "../../utils/setTheme"
 
 function Header() {
   const dispatch = useDispatch();
   const theme = useSelector((state) => state.theme);
+
+  useEffect(() => {
+    setTheme(theme);
+  }, [theme])
 
   const handleChangeTheme = () => {
     dispatch(changeTheme());

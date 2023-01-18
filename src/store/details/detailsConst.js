@@ -1,4 +1,4 @@
-export const ADD_DETAILS = "ADD_DETAILS";
-export const SET_LOADING = "SET_LOADING";
-export const SET_ERROR = "SET_LOADING";
-export const ADD_NEIGBORS = "ADD_NEIGBORS";
+export const ADD_DETAILS = "@@details/ADD_DETAILS";
+export const SET_LOADING = "@@details/SET_LOADING";
+export const SET_ERROR = "@@details/SET_ERROR";
+export const ADD_NEIGBORS = "@@details/ADD_NEIGBORS";

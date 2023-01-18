@@ -11,10 +11,11 @@ import { putSpaceInString } from "../../utils/putSpaceInString";
 import { detailsConfig } from "../../mock/detailsConfig";
 
 import LoaderSection from "../LoaderSection/LoaderSection";
+import ErrorMessage from "../ErrorMessage/ErrorMessage";
 
 function Details() {
   const dispatch = useDispatch();
-  const { currentCountry, status, neigbors } = useSelector((state) => {
+  const { currentCountry, status, neigbors, error } = useSelector((state) => {
     return state.details
   });
 
@@ -34,6 +35,7 @@ function Details() {
   return (
     <>
       {status === "loading" && <LoaderSection />}
+      {status === "rejected" && <ErrorMessage title={error} subtitle={"Refresh the page or visit later"}/>}
       {status === "received" && (
         <section className="details">
           <img className="details__img" src={currentCountry.flag} alt={name} />

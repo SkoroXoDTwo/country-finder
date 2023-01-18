@@ -1,6 +1,9 @@
-import { useSelector, useDispatch } from "react-redux";
-import { changeSearch, clearSearch } from "../../store/search/searchActions";
 import "./Search.scss";
+
+import { useSelector, useDispatch } from "react-redux";
+
+import { changeSearch, clearSearch } from "../../store/search/searchActions";
+
 
 function Search() {
   const dispatch = useDispatch();
@@ -23,7 +26,7 @@ function Search() {
         placeholder="Search for a country..."
         onChange={changeInput}
       />
-      {searchValue !== "" && <button className="search__clear-btn" onClick={clearSearchValue} />}
+      {searchValue && <button className="search__clear-btn" onClick={clearSearchValue} />}
     </div>
   );
 }
