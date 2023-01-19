@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 import { loadDetails, loadNeigbors } from "../../store/details/detailsActions";
 import { putSpaceInString } from "../../utils/putSpaceInString";
 
-import { detailsConfig } from "../../mock/detailsConfig";
+import { detailsConfig } from "../../configs/detailsConfig";
 
 import LoaderSection from "../LoaderSection/LoaderSection";
 import ErrorMessage from "../ErrorMessage/ErrorMessage";

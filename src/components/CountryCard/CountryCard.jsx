@@ -1,6 +1,7 @@
 import "./CountryCard.scss"
 import { Link } from "react-router-dom";
-import { countryCardConfig } from "../../mock/countryCardConfig";
+
+import { countryCardConfig } from "../../configs/countryCardConfig";
 
 function CountryCard({ name, flagUrl, country }) {
 

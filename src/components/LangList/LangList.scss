@@ -1,0 +1,119 @@
+.lang-list {
+  position: relative;
+
+  &__btn {
+    margin: 0;
+    padding: 4px 4px 4px 12px;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.15);
+    border-radius: 3px;
+    width: 100%;
+    background: var(--background-body-color);
+    transition: background 0.2s;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    @media screen and (max-width: 550px) {
+      & {
+        padding: 16px 12px 16px 20px;
+      }
+    }
+  }
+
+  &__btn-text {
+    margin: 0;
+    padding: 0;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    color: var(--text-color);
+    transition: color 0.2s;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    text-transform: capitalize;
+  }
+
+  &__btn-icon {
+    width: 24px;
+    height: 24px;
+    background: var(--arrow-icon);
+    transition: background 0.2s, transform 0.2s;
+
+    &_opened {
+      transform: rotate(-180deg);
+    }
+  }
+
+  &__list {
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    transform: translateY(100%);
+    z-index: 2;
+    margin: 0;
+    padding: 6px 6px 6px 18px;
+    list-style: none;
+    width: 100%;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.15);
+    border-radius: 3px;
+    background: var(--background-body-color);
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    opacity: 0;
+    visibility: hidden;
+    transition: background 0.2s, opacity 0.2s, visibility 0.2s;
+
+    &_opened {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  &__item-circle {
+    width: 5px;
+    height: 5px;
+    background: var(--text-color);
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: -10px;
+    transform: translateY(-50%);
+    transition: background 0.2s;
+  }
+
+  &__list-item {
+    position: relative;
+  }
+
+  &__item-btn {
+    margin: 0;
+    padding: 0;
+    border: none;
+    background: none;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    text-transform: capitalize;
+    color: var(--text-color);
+    transition: color 0.2s, opacity 0.2s;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 100%;
+    text-align: left;
+    position: relative;
+
+    &:hover {
+      cursor: pointer;
+      opacity: 0.8;
+    }
+  }
+}
