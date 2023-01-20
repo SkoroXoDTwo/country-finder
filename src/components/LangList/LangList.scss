@@ -9,19 +9,13 @@
     align-items: center;
     justify-content: space-between;
     box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.15);
-    border-radius: 3px;
+    border-radius: 20px;
     width: 100%;
     background: var(--background-body-color);
     transition: background 0.2s;
 
     &:hover {
       cursor: pointer;
-    }
-
-    @media screen and (max-width: 550px) {
-      & {
-        padding: 16px 12px 16px 20px;
-      }
     }
   }
 
@@ -60,8 +54,8 @@
     padding: 6px 6px 6px 18px;
     list-style: none;
     width: 100%;
-    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.15);
-    border-radius: 3px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+    border-radius: 20px;
     background: var(--background-body-color);
     box-sizing: border-box;
     display: flex;
@@ -70,6 +64,7 @@
     opacity: 0;
     visibility: hidden;
     transition: background 0.2s, opacity 0.2s, visibility 0.2s;
+    border-radius: 3px;
 
     &_opened {
       opacity: 1;
