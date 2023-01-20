@@ -5,12 +5,14 @@ import { Link } from "react-router-dom";
 
 import { changeTheme } from "../../store/theme/themeActions";
 import { setTheme } from "../../utils/setTheme"
+import { translationConfig } from "../../configs/langConfig";
 
 import LangList from "../LangList/LangList";
 
 function Header() {
   const dispatch = useDispatch();
   const theme = useSelector((state) => state.theme);
+  const lang = useSelector((state) => state.lang);
 
   useEffect(() => {
     setTheme(theme);
@@ -23,7 +25,7 @@ function Header() {
   return (
     <header className="header">
       <Link to={"/"}>
-        <h1 className="header__logo">Where in the world?</h1>
+        <h1 className="header__logo">{translationConfig[lang].logo}</h1>
       </Link>
 
       <nav>

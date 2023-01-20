@@ -9,15 +9,16 @@ import { loadDetails, loadNeigbors } from "../../store/details/detailsActions";
 import { putSpaceInString } from "../../utils/putSpaceInString";
 
 import { detailsConfig } from "../../configs/detailsConfig";
+import { translationConfig } from "../../configs/langConfig";
 
 import LoaderSection from "../LoaderSection/LoaderSection";
 import ErrorMessage from "../ErrorMessage/ErrorMessage";
 
 function Details() {
   const dispatch = useDispatch();
-  const { currentCountry, status, neigbors, error } = useSelector((state) => {
-    return state.details
-  });
+  const lang = useSelector((state) => state.lang);
+
+  const { currentCountry, status, neigbors, error } = useSelector((state) => state.details);
 
   const { name } = useParams();
 
@@ -35,7 +36,7 @@ function Details() {
   return (
     <>
       {status === "loading" && <LoaderSection />}
-      {status === "rejected" && <ErrorMessage title={error} subtitle={"Refresh the page or visit later"}/>}
+      {status === "rejected" && <ErrorMessage title={error} subtitle={"Refresh the page or visit later"} />}
       {status === "received" && (
         <section className="details">
           <img className="details__img" src={currentCountry.flag} alt={name} />
@@ -45,7 +46,7 @@ function Details() {
               {detailsConfig.map((setup) => (
                 <li key={setup}>
                   <p className="details__text">
-                    <span className="details__text-bold">{putSpaceInString(setup)}: </span>
+                    <span className="details__text-bold">{putSpaceInString(translationConfig[lang][setup])}: </span>
                     {currentCountry[setup] ? currentCountry[setup] : 'none'}
                   </p>
                 </li>
@@ -53,7 +54,7 @@ function Details() {
             </ul>
             {neigbors &&
               <div className="details__border-countries">
-                <h3 className="details__border-title">Border Countries:</h3>
+                <h3 className="details__border-title">{`${translationConfig[lang].borderCountries}:`}</h3>
                 <ul className="details__border-list">
                   {
                     neigbors.map((name) => (

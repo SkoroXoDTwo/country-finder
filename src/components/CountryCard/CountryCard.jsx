@@ -1,9 +1,11 @@
 import "./CountryCard.scss"
 import { Link } from "react-router-dom";
-
+import { useSelector } from "react-redux";
 import { countryCardConfig } from "../../configs/countryCardConfig";
+import { translationConfig } from "../../configs/langConfig";
 
 function CountryCard({ name, flagUrl, country }) {
+  const lang = useSelector((state) => state.lang);
 
   return (
     <Link to={`/country/${name}`}>
@@ -16,7 +18,7 @@ function CountryCard({ name, flagUrl, country }) {
               {countryCardConfig.map((setup) => (
                 <li key={setup}>
                   <p className="country__text">
-                    <span className="country__text-bold">{setup}: </span>
+                    <span className="country__text-bold">{translationConfig[lang][setup]}: </span>
                     {country[setup] ? country[setup] : 'none'}
                   </p>
                 </li>

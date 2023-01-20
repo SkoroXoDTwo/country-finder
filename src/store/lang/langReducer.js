@@ -1,6 +1,6 @@
 import { CHANGE_LANG } from "./langConst";
 
-export const langReducer = (state = "", action) => {
+export const langReducer = (state = "en", action) => {
   switch (action.type) {
     case CHANGE_LANG:
 

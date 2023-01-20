@@ -1,10 +1,12 @@
 import "./Filters.scss";
 import { useSelector, useDispatch } from "react-redux";
+import { useEffect, useState } from "react";
 import { changeFilter } from "../../store/filters/filtersActions";
 import { regionsConfig } from "../../configs/regionsConfig";
-import { useEffect, useState } from "react";
+import { translationConfig } from "../../configs/langConfig";
 
 function Filters() {
+  const lang = useSelector((state) => state.lang);
   const dispatch = useDispatch();
   const filterValue = useSelector((state) => state.filter);
 
@@ -44,7 +46,7 @@ function Filters() {
     <div className="filters">
       <button className="filters__btn" onClick={toggleOpenedList}>
         <p className="filters__btn-text">
-          {filterValue === "all" ? "Filter by Region" : filterValue}
+          {filterValue === "all" ? translationConfig[lang].filter : filterValue}
         </p>
         <span
           className={`filters__btn-icon ${isOpen ? "filters__btn-icon_opened" : ""
