@@ -36,7 +36,11 @@ function Details() {
   return (
     <>
       {status === "loading" && <LoaderSection />}
-      {status === "rejected" && <ErrorMessage title={error} subtitle={"Refresh the page or visit later"} />}
+      {status === "rejected" &&
+        <ErrorMessage
+          title={`${translationConfig[lang].errorMessageTitle}: ${error}`}
+          subtitle={translationConfig[lang].errorMessageSubtitle}
+        />}
       {status === "received" && (
         <section className="details">
           <img className="details__img" src={currentCountry.flag} alt={name} />

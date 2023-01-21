@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 
 import { selectVisibleCountries } from "../../store/countries/countriesSelectors";
 import { selectCountriesInfo } from "../../store/countries/countriesSelectors";
+
 import CountryCard from "../CountryCard/CountryCard";
 import LoaderSection from "../LoaderSection/LoaderSection";
 import ErrorMessage from "../ErrorMessage/ErrorMessage"
@@ -38,7 +39,11 @@ function CountriesList() {
           subtitle={translationConfig[lang].nothingFoundSubtitle}
         />)}
 
-      {status === "rejected" && <ErrorMessage title={error} subtitle={"Refresh the page or visit later"} />}
+      {status === "rejected" &&
+        <ErrorMessage
+          title={`${translationConfig[lang].errorMessageTitle}: ${error}`}
+          subtitle={translationConfig[lang].errorMessageSubtitle}
+        />}
     </>
 
   )

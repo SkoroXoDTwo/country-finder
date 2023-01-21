@@ -1,11 +1,4 @@
-export const langConfig = [
-  {
-    lang: "en",
-  },
-  {
-    lang: "ru",
-  },
-];
+export const langConfig = ["en", "ru", "fr"];
 
 export const translationConfig = {
   en: {
@@ -24,6 +17,9 @@ export const translationConfig = {
     borderCountries: "Border Countries",
     nothingFoundTitle: "Nothing found",
     nothingFoundSubtitle: "Change the filter or search value",
+    errorMessageTitle: "Error",
+    errorMessageSubtitle: "Refresh the page or visit later",
+    pageNotFound: "Page Not Found",
   },
   ru: {
     logo: "Где в мире?",
@@ -35,11 +31,34 @@ export const translationConfig = {
     backBtn: "Назад",
     nativeName: "Местное название",
     subregion: "Субрегион",
-    currencies: "Валюты",
-    languages: "Языки",
+    currencies: "Валюта",
+    languages: "Язык",
     topLevelDomain: "Домен",
     borderCountries: "Соседние страны",
     nothingFoundTitle: "Ничего не найдено",
     nothingFoundSubtitle: "Измените фильтр или значение поиска",
+    errorMessageTitle: "Ошибка",
+    errorMessageSubtitle: "Обновите страницу или зайдите позже",
+    pageNotFound: "Страница не найдена",
+  },
+  fr: {
+    logo: "Où dans le monde?",
+    searchPlaceholder: "Rechercher un pays",
+    filter: "Filtrer Par Région",
+    population: "Population",
+    region: "Région",
+    capital: "Capital",
+    backBtn: "Arrière",
+    nativeName: "Nom Natif",
+    subregion: "Sous-Région",
+    currencies: "Change",
+    languages: "Langue",
+    topLevelDomain: "Domaine",
+    borderCountries: "Pays Frontaliers",
+    nothingFoundTitle: "Rien trouvé",
+    nothingFoundSubtitle: "Modifier le filtre ou la valeur de recherche",
+    errorMessageTitle: "Erreur",
+    errorMessageSubtitle: "Actualisez la page ou visitez plus tard",
+    pageNotFound: "Page introuvable",
   },
 };

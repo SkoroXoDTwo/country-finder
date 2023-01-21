@@ -1,7 +1,9 @@
 import "./Filters.scss";
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect, useState } from "react";
+
 import { changeFilter } from "../../store/filters/filtersActions";
+
 import { regionsConfig } from "../../configs/regionsConfig";
 import { translationConfig } from "../../configs/langConfig";
 
